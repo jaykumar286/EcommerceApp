@@ -1,0 +1,21 @@
+.home-title{
+    margin-top: 3rem;
+    font-size: 3rem;
+    letter-spacing: 1.2rem;
+}
+
+#login-wrapper{
+    width:600px;
+    margin:4rem auto;
+}
+#login-wrapper h4{
+    font-size: 2rem;
+    letter-spacing: 1rem;
+}
+#login-wrapper *{
+    margin:10px auto;
+}
+
+#login-wrapper .sign-up:hover{
+    text-decoration-line:underline ;
+}

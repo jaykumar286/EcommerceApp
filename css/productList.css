@@ -1,0 +1,84 @@
+.select-text{
+    flex-basis: 50%;
+    margin-top:0.5rem;
+}
+
+.select-price{
+    flex-basis: 50%;
+}
+
+.product-list-title{
+    font-size: 2rem;
+    margin: 40px 0;
+    font-weight: normal;
+}
+
+.product-list-sidebar{
+    margin-right: 100px;
+
+    flex-basis: 20%;
+}
+
+.product-list-sidebar a{
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    color:black;
+    border-bottom: 1px solid #95afc0;
+    background-color: #bff9fb;
+}
+
+.product-list-sidebar a:last-child{
+    border-bottom: none;
+}
+.product-list-sidebar a:hover{
+    background-color: #c7ecee;
+    font-weight: bold;
+}
+
+#categoryList{
+    margin-bottom: 1rem;
+}
+
+.sidebar-title{
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-search{
+    margin-bottom: 1rem;
+}
+
+.clear-filter{
+    margin-top: 1rem;
+}
+
+.product-list-box{
+    flex-basis: 80%;
+}
+
+.product-list-box .product-item {
+    width:20%;
+    margin-right: 2%;
+    margin-bottom: 30px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding: 1rem;
+}
+
+.product-img{
+    height: 400px;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.product-list-box .product-item .product-name{
+    font-size: 1rem;
+    color:black;
+    padding: 0.75rem 0;
+}
+
+.product-list-box .product-item .product-title{
+    color:blue;
+    padding-bottom:10px;
+}

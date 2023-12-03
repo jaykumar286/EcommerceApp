@@ -1,0 +1,44 @@
+html{
+    box-sizing: border-box;
+}
+
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+
+.header{
+    background-color: beige;
+    padding: 1.2rem;
+}
+
+.header-wrapper .logo a{
+    color:black;
+    font-size: 1.3rem;
+    letter-spacing: 0.8rem;
+    text-decoration: none;
+}
+
+.header-wrapper .logo a:hover{
+    text-decoration-line: underline;
+}
+
+.header-wrapper .user-action{
+    gap:1rem
+}
+
+.header-wrapper .user-action a{
+    color:black;
+    text-decoration: none;
+}
+
+.header-wrapper .user-action a:hover{
+    text-decoration-line: underline;
+}
+
+.header-wrapper .user-action #logoutBtn{
+    margin-left: 1rem;
+}
+
+.header-wrapper .user-action #logoutBtn:hover{
+    cursor: pointer;
+}
