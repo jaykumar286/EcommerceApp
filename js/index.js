@@ -1,13 +1,8 @@
-async function fetchCategoryList(){
-    const response = await fetch('https://fakestoreapi.com/products/categories');
-    const data = await response.json();
-    return data;
-}
-
 async function setCategeryList(){
-    const categories = await fetchCategoryList();
     const categoryListDiv = document.getElementById('categoryList');
 
+    const categories = await fetchCategoryList();
+    offTheLoader();
     categories.forEach((category)=>{
         const categoryItemDiv = document.createElement('div');
         const categoryItemAncher = document.createElement('a');

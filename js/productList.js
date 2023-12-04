@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded',()=>{
-
     async function getAllProductDetails(){
         const response = await axios.get("https://fakestoreapi.com/products");
         const data = response.data;
@@ -11,12 +10,6 @@ document.addEventListener('DOMContentLoaded',()=>{
         const data = response.data;
        return data;
     };
-
-    async function fetchCategoryList(){
-        const response = await fetch('https://fakestoreapi.com/products/categories');
-        const data = await response.json();
-        return data;
-    }
 
     async function setCategeryList(){
         const categories = await fetchCategoryList();
@@ -31,13 +24,10 @@ document.addEventListener('DOMContentLoaded',()=>{
         });
     }
     
-    setCategeryList()
-
     async function populateProductDetails(flag,customProductList){
         let productDetails = customProductList;
 
-        const urlSearchParams = new URLSearchParams(window.location.search);
-        const params = Object.fromEntries(urlSearchParams.entries());
+        const params = getURLParamasObject();
 
         if (!flag){
 
@@ -50,6 +40,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         
         const productListDiv = document.getElementById("productList");
 
+
         productDetails.forEach((product)=>{
 
             const productAnchor = document.createElement('a');
@@ -59,6 +50,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             const productPriceDiv = document.createElement('div');
 
             productAnchor.target = "_blank";
+            productAnchor.href = `productDetails.html?id=${product.id}`
             productImg.src = product.image;
             productImg.alt = "";
             productNameDiv.textContent = product.title.substring(0,12)+'...';
@@ -75,7 +67,15 @@ document.addEventListener('DOMContentLoaded',()=>{
         });
     };
 
-    populateProductDetails(false);
+    async function populateProductAndCategories(){
+        Promise.all([setCategeryList(),populateProductDetails(false)]).then(
+            ()=>{
+                offTheLoader();
+            }
+        );
+    }
+
+    populateProductAndCategories();
 
     const searchBtn = document.getElementById('search');
     searchBtn.addEventListener('click',async ()=>{
